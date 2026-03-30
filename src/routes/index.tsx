@@ -8,7 +8,7 @@
  * scroll-reveal animations, and smooth transitions throughout.
  */
 
-import { createFileRoute } from '@tanstack/react-router'
+import { createFileRoute, Link } from '@tanstack/react-router'
 import { useEffect, useRef, useState } from 'react'
 
 export const Route = createFileRoute('/')({
@@ -121,12 +121,22 @@ function Navigation() {
             <li key={link.id}>
               <button
                 onClick={() => scrollTo(link.id)}
-                className="nav-link cursor-pointer bg-transparent border-none p-0"
+                className="nav-link cursor-pointer bg-transparent border-none p-0 text-white hover:text-white/70 transition-colors"
+                style={{ fontFamily: 'Inter, sans-serif' }}
               >
                 {link.label}
               </button>
             </li>
           ))}
+          <li>
+            <Link
+              to="/blog"
+              className="nav-link cursor-pointer bg-transparent border-none p-0 text-white hover:text-white/70 transition-colors"
+              style={{ fontFamily: 'Inter, sans-serif' }}
+            >
+              Blog
+            </Link>
+          </li>
         </ul>
 
         {/* Removed Get In Touch CTA button (desktop) */}
@@ -151,12 +161,20 @@ function Navigation() {
               <li key={link.id}>
                 <button
                   onClick={() => scrollTo(link.id)}
-                  className="nav-link cursor-pointer bg-transparent border-none text-base"
+                  className="nav-link cursor-pointer bg-transparent border-none text-base text-white w-full text-left"
                 >
                   {link.label}
                 </button>
               </li>
             ))}
+            <li>
+              <Link
+                to="/blog"
+                className="nav-link cursor-pointer bg-transparent border-none text-base text-white w-full block"
+              >
+                Blog
+              </Link>
+            </li>
             {/* Removed Get In Touch (mobile) */}
           </ul>
         </div>
