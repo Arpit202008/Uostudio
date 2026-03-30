@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+
+# Block server API and internal routes from indexing
+Disallow: /api/
+
+Sitemap: https://uostudio.in/sitemap.xml
