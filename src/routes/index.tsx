@@ -570,7 +570,7 @@ function FounderSection() {
             aria-label="Founder photo"
           >
             <img
-              src="/arpit.jpg"
+              src="/my photo 2.jpeg"
               alt="Arpit Chourasia"
               className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 hover:scale-105"
             />

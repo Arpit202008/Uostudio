@@ -47,7 +47,7 @@ function App() {
                 set and make meaningful impacts through technology.
               </p>
               <img
-                src="/headshot-on-white.jpg"
+                src="/my photo 2.jpeg"
                 alt="Professional headshot"
                 className="w-44 h-52 rounded-2xl object-cover"
               />
