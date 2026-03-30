@@ -590,7 +590,7 @@ function FounderSection() {
             <img
               src="/my photo 2.jpeg"
               alt="Arpit Chourasia"
-              className="absolute inset-0 w-full h-full object-contain transition-transform duration-700 hover:scale-105"
+              className="absolute inset-0 w-full h-full object-cover object-top transition-transform duration-700 hover:scale-105"
             />
             {/* Gradient overlay at bottom */}
             <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-black/80 to-transparent z-10 pointer-events-none" aria-hidden="true" />
@@ -653,7 +653,7 @@ function FounderSection() {
               src="/raushan.jpg"
               onError={(e) => { e.currentTarget.style.display = 'none' }}
               alt="Raushan Raj"
-              className="absolute inset-0 w-full h-full object-contain transition-transform duration-700 hover:scale-105"
+              className="absolute inset-0 w-full h-full object-cover object-[center_40%] transition-transform duration-700 hover:scale-105"
             />
             {/* Fallback silhouette if image is missing */}
             <div className="absolute inset-0 flex flex-col items-center justify-center gap-4 -z-10">
