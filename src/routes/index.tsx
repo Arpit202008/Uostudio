@@ -322,7 +322,7 @@ function AboutSection() {
       <div className="max-w-7xl mx-auto">
 
         {/* ── Section header ── */}
-        <div className="reveal mb-16">
+        <div className="reveal text-center mb-16 mx-auto max-w-3xl">
           <span className="section-label">About Us</span>
           <h2
             className="font-display text-gradient-accent"
