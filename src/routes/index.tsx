@@ -584,16 +584,16 @@ function FounderSection() {
 
           {/* Left: founder photo */}
           <div
-            className="founder-photo-placeholder relative min-h-80 md:min-h-full flex items-end justify-center p-6"
+            className="relative w-full h-full flex items-start overflow-hidden bg-black/20"
             aria-label="Founder photo"
           >
             <img
               src="/my photo 2.jpeg"
               alt="Arpit Chourasia"
-              className="absolute inset-0 w-full h-full object-cover object-top transition-transform duration-700 hover:scale-105"
+              className="w-full h-auto object-cover transition-transform duration-700 hover:scale-105"
             />
             {/* Gradient overlay at bottom */}
-            <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-black/80 to-transparent z-10 pointer-events-none" aria-hidden="true" />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent z-10 pointer-events-none" aria-hidden="true" />
           </div>
 
           {/* Right: founder bio */}
@@ -646,14 +646,14 @@ function FounderSection() {
         <div className="reveal delay-200 grid grid-cols-1 md:grid-cols-2 gap-0 glass-card overflow-hidden h-full">
           {/* Left: co-founder photo */}
           <div
-            className="founder-photo-placeholder relative min-h-80 md:min-h-full flex items-end justify-center p-6"
+            className="relative w-full h-full flex items-start overflow-hidden bg-black/20"
             aria-label="Co-Founder photo"
           >
             <img
               src="/raushan.jpg"
               onError={(e) => { e.currentTarget.style.display = 'none' }}
               alt="Raushan Raj"
-              className="absolute inset-0 w-full h-full object-cover object-[center_40%] transition-transform duration-700 hover:scale-105"
+              className="w-full h-auto object-cover transition-transform duration-700 hover:scale-105"
             />
             {/* Fallback silhouette if image is missing */}
             <div className="absolute inset-0 flex flex-col items-center justify-center gap-4 -z-10">
@@ -666,7 +666,7 @@ function FounderSection() {
               <span className="text-white/20 text-xs tracking-widest uppercase font-display">Photo Placeholder</span>
             </div>
             {/* Gradient overlay at bottom */}
-            <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-black/80 to-transparent z-10 pointer-events-none" aria-hidden="true" />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent z-10 pointer-events-none" aria-hidden="true" />
           </div>
           
           {/* Right: bio */}
