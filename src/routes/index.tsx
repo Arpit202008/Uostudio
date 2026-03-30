@@ -884,12 +884,22 @@ function Footer() {
           >
             © 2026 UOstudio. All Rights Reserved.
           </p>
-          <p
-            className="text-white/20 text-xs"
-            style={{ fontFamily: 'Inter, sans-serif' }}
-          >
-            Built with passion for gaming
-          </p>
+          <div className="flex items-center gap-6">
+            <Link
+              to="/privacy-policy"
+              className="text-white/20 hover:text-white/50 text-xs transition-colors duration-200"
+              style={{ fontFamily: 'Inter, sans-serif' }}
+            >
+              Privacy Policy
+            </Link>
+            <Link
+              to="/terms-and-conditions"
+              className="text-white/20 hover:text-white/50 text-xs transition-colors duration-200"
+              style={{ fontFamily: 'Inter, sans-serif' }}
+            >
+              Terms & Conditions
+            </Link>
+          </div>
         </div>
       </div>
     </footer>
