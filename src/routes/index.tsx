@@ -620,17 +620,11 @@ function FounderSection() {
 
             {/* Bio paragraphs */}
             <p className="text-white/60 text-sm leading-relaxed mb-4">
-              Arpit Chourasia is a visionary game developer and entrepreneur with a deep
-              passion for creating worlds that resonate. With a background spanning
-              programming, game design, and interactive storytelling, Arpit founded
-              UOstudio to realize a singular vision: games that transcend entertainment
-              and become cultural landmarks.
+              Arpit Chourasia is a visionary game developer and entrepreneur with a deep passion for creating worlds that resonate. With a background spanning programming, game design, and interactive storytelling, Arpit founded UOstudio to realize a singular vision: games that transcend entertainment and become cultural landmarks. Driven by the belief that independent studios can compete at the highest level, Arpit leads UOstudio with a hands-on approach—balancing creative ambition with technical rigor to deliver exceptional products.
             </p>
 
-            <p className="text-white/40 text-sm leading-relaxed mb-8">
-              Driven by the belief that independent studios can compete at the highest
-              level, Arpit leads UOstudio with a hands-on approach—balancing creative
-              ambition with technical rigor to deliver exceptional products.
+            <p className="text-white/60 text-sm leading-relaxed mb-8">
+              Under his leadership, UOstudio is steadily building a reputation for innovation, originality, and player-focused design. Arpit emphasizes the importance of immersive experiences that connect emotionally with players, not just mechanically. He is constantly exploring new technologies and creative frameworks to push the boundaries of what games can achieve. His dedication to continuous learning and improvement fuels both personal growth and the studio’s evolution. With a clear vision for the future, Arpit aims to position UOstudio as a globally recognized name in the gaming industry.
             </p>
 
             {/* Contact CTA */}
@@ -691,7 +685,10 @@ function FounderSection() {
             </div>
             <div className="glow-line mb-6" />
             <p className="text-white/60 text-sm leading-relaxed mb-4">
-              Raushan raj is the creative backbone of UOstudio. With a sharp eye for design and a passion for interactive experiences, he leads the visual and conceptual direction of every project, turning ideas into immersive 2D worlds.
+              Raushan Raj is the creative backbone of UOstudio, bringing imagination to life through compelling visuals and innovative design thinking. With a sharp eye for detail and a deep passion for interactive experiences, he leads the visual and conceptual direction of every project, ensuring each idea transforms into an immersive 2D world. His expertise spans art direction, UI/UX design, and game aesthetics, allowing him to craft visually engaging and player-centric experiences. Raushan believes that great design is not just about appearance, but about how it makes players feel and connect with the game.
+            </p>
+            <p className="text-white/60 text-sm leading-relaxed mb-4">
+              Under his creative leadership, UOstudio is developing a unique visual identity that stands out in the indie game space. He constantly experiments with new art styles and creative approaches to keep the studio’s work fresh and impactful. Raushan collaborates closely with the development team to ensure a seamless blend of design and functionality. His dedication to creativity and innovation drives the studio’s artistic growth and consistency. With a strong vision for the future, he aims to establish UOstudio as a hub of distinctive and memorable game design.
             </p>
           </div>
         </div>
