@@ -659,7 +659,7 @@ function FounderSection() {
               src="/raushan.jpg"
               onError={(e) => { e.currentTarget.style.display = 'none' }}
               alt="Raushan Raj"
-              className="absolute inset-0 w-full h-full object-cover object-top transition-transform duration-700 hover:scale-105"
+              className="absolute inset-0 w-full h-full object-cover object-[center_40%] transition-transform duration-700 hover:scale-105"
             />
             {/* Fallback silhouette if image is missing */}
             <div className="absolute inset-0 flex flex-col items-center justify-center gap-4 -z-10">
