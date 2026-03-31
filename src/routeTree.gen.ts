@@ -12,8 +12,6 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as WorksRouteImport } from './routes/works'
 import { Route as TermsAndConditionsRouteImport } from './routes/terms-and-conditions'
 import { Route as ServicesRouteImport } from './routes/services'
-import { Route as ResumeRouteImport } from './routes/resume'
-import { Route as ProjectsRouteImport } from './routes/projects'
 import { Route as PrivacyPolicyRouteImport } from './routes/privacy-policy'
 import { Route as FounderRouteImport } from './routes/founder'
 import { Route as ContactRouteImport } from './routes/contact'
@@ -36,16 +34,6 @@ const TermsAndConditionsRoute = TermsAndConditionsRouteImport.update({
 const ServicesRoute = ServicesRouteImport.update({
   id: '/services',
   path: '/services',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const ResumeRoute = ResumeRouteImport.update({
-  id: '/resume',
-  path: '/resume',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const ProjectsRoute = ProjectsRouteImport.update({
-  id: '/projects',
-  path: '/projects',
   getParentRoute: () => rootRouteImport,
 } as any)
 const PrivacyPolicyRoute = PrivacyPolicyRouteImport.update({
@@ -96,8 +84,6 @@ export interface FileRoutesByFullPath {
   '/contact': typeof ContactRoute
   '/founder': typeof FounderRoute
   '/privacy-policy': typeof PrivacyPolicyRoute
-  '/projects': typeof ProjectsRoute
-  '/resume': typeof ResumeRoute
   '/services': typeof ServicesRoute
   '/terms-and-conditions': typeof TermsAndConditionsRoute
   '/works': typeof WorksRoute
@@ -111,8 +97,6 @@ export interface FileRoutesByTo {
   '/contact': typeof ContactRoute
   '/founder': typeof FounderRoute
   '/privacy-policy': typeof PrivacyPolicyRoute
-  '/projects': typeof ProjectsRoute
-  '/resume': typeof ResumeRoute
   '/services': typeof ServicesRoute
   '/terms-and-conditions': typeof TermsAndConditionsRoute
   '/works': typeof WorksRoute
@@ -127,8 +111,6 @@ export interface FileRoutesById {
   '/contact': typeof ContactRoute
   '/founder': typeof FounderRoute
   '/privacy-policy': typeof PrivacyPolicyRoute
-  '/projects': typeof ProjectsRoute
-  '/resume': typeof ResumeRoute
   '/services': typeof ServicesRoute
   '/terms-and-conditions': typeof TermsAndConditionsRoute
   '/works': typeof WorksRoute
@@ -144,8 +126,6 @@ export interface FileRouteTypes {
     | '/contact'
     | '/founder'
     | '/privacy-policy'
-    | '/projects'
-    | '/resume'
     | '/services'
     | '/terms-and-conditions'
     | '/works'
@@ -159,8 +139,6 @@ export interface FileRouteTypes {
     | '/contact'
     | '/founder'
     | '/privacy-policy'
-    | '/projects'
-    | '/resume'
     | '/services'
     | '/terms-and-conditions'
     | '/works'
@@ -174,8 +152,6 @@ export interface FileRouteTypes {
     | '/contact'
     | '/founder'
     | '/privacy-policy'
-    | '/projects'
-    | '/resume'
     | '/services'
     | '/terms-and-conditions'
     | '/works'
@@ -190,8 +166,6 @@ export interface RootRouteChildren {
   ContactRoute: typeof ContactRoute
   FounderRoute: typeof FounderRoute
   PrivacyPolicyRoute: typeof PrivacyPolicyRoute
-  ProjectsRoute: typeof ProjectsRoute
-  ResumeRoute: typeof ResumeRoute
   ServicesRoute: typeof ServicesRoute
   TermsAndConditionsRoute: typeof TermsAndConditionsRoute
   WorksRoute: typeof WorksRoute
@@ -221,20 +195,6 @@ declare module '@tanstack/react-router' {
       path: '/services'
       fullPath: '/services'
       preLoaderRoute: typeof ServicesRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/resume': {
-      id: '/resume'
-      path: '/resume'
-      fullPath: '/resume'
-      preLoaderRoute: typeof ResumeRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/projects': {
-      id: '/projects'
-      path: '/projects'
-      fullPath: '/projects'
-      preLoaderRoute: typeof ProjectsRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/privacy-policy': {
@@ -302,8 +262,6 @@ const rootRouteChildren: RootRouteChildren = {
   ContactRoute: ContactRoute,
   FounderRoute: FounderRoute,
   PrivacyPolicyRoute: PrivacyPolicyRoute,
-  ProjectsRoute: ProjectsRoute,
-  ResumeRoute: ResumeRoute,
   ServicesRoute: ServicesRoute,
   TermsAndConditionsRoute: TermsAndConditionsRoute,
   WorksRoute: WorksRoute,

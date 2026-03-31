@@ -688,7 +688,7 @@ export function ContactSection() {
  * Footer with logo, studio tagline, navigation links, and copyright.
  * Clean minimal design that closes the page with finality.
  */
-export function Footer() {
+export function Footer({ showLogo = true }: { showLogo?: boolean }) {
   const scrollTo = (id: string) => {
     document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' })
   }
@@ -703,23 +703,25 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-16">
 
           {/* ── Brand column ── */}
-          <div className="md:col-span-1">
-            {/* Logo placeholder + name */}
-            <div className="flex items-center gap-3 mb-6">
-              <img src="/logo.jpg" alt="UOstudio logo" className="w-10 h-10 rounded-sm object-cover" />
-              <span
-                className="font-display font-bold text-white tracking-widest text-sm uppercase"
-                style={{ fontFamily: 'Orbitron, monospace' }}
-              >
-                UOstudio
-              </span>
-            </div>
+          {showLogo && (
+            <div className="md:col-span-1">
+              {/* Logo placeholder + name */}
+              <div className="flex items-center gap-3 mb-6">
+                <img src="/logo.jpg" alt="UOstudio logo" className="w-10 h-10 rounded-sm object-cover" />
+                <span
+                  className="font-display font-bold text-white tracking-widest text-sm uppercase"
+                  style={{ fontFamily: 'Orbitron, monospace' }}
+                >
+                  UOstudio
+                </span>
+              </div>
 
-            <p className="text-white/40 text-sm leading-relaxed max-w-xs">
-              Building worlds, crafting experiences, and pushing the boundaries
-              of interactive entertainment.
-            </p>
-          </div>
+              <p className="text-white/40 text-sm leading-relaxed max-w-xs">
+                Building worlds, crafting experiences, and pushing the boundaries
+                of interactive entertainment.
+              </p>
+            </div>
+          )}
 
           {/* ── Navigation column ── */}
           <div>

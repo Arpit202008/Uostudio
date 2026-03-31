@@ -1,5 +1,6 @@
 import { createFileRoute, Link } from '@tanstack/react-router'
 import { ArrowLeft } from 'lucide-react'
+import { Footer } from './index'
 
 // Dummy Data for Marquees
 const ongoingProjects = [
@@ -80,10 +81,10 @@ function WorksPage() {
         <div className="mb-12">
           <Link 
             to="/" 
-            className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-white/5 border border-white/10 text-white hover:bg-white/10 hover:scale-110 transition-all font-display text-sm uppercase tracking-widest"
+            className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-white/5 border border-white/10 text-white hover:bg-white/10 hover:scale-110 transition-all drop-shadow-[0_0_10px_rgba(255,255,255,0.3)]"
             aria-label="Back to Home"
           >
-            <ArrowLeft size={24} />
+            <ArrowLeft size={24} strokeWidth={3} className="text-white" />
           </Link>
         </div>
         
@@ -117,6 +118,7 @@ function WorksPage() {
           <Marquee items={completedProjects} direction="right" />
         </section>
       </div>
+      <Footer showLogo={false} />
     </div>
   )
 }
