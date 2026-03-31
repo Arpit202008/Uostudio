@@ -466,3 +466,25 @@ body {
 ::-webkit-scrollbar-thumb:hover {
   background: #555;
 }
+
+/* ─── Infinite Marquee Animations ────────────────────────────────────────── */
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-100%); }
+}
+
+@keyframes marqueeReverse {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(0); }
+}
+
+.animate-marquee {
+  animation: marquee 35s linear infinite;
+  min-width: max-content;
+}
+
+.animate-marquee-reverse {
+  animation: marqueeReverse 35s linear infinite;
+  min-width: max-content;
+}
+

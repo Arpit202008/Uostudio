@@ -4,6 +4,17 @@ import { Badge } from '@/components/ui/badge'
 import { ArrowLeft, Calendar, ArrowRight } from 'lucide-react'
 
 export const Route = createFileRoute('/blog/')({
+  head: () => ({
+    meta: [
+      { title: 'Studio Log | UOstudio Blog' },
+      {
+        name: 'description',
+        content: 'Read the latest articles, development logs, and updates from the UOstudio game development team.',
+      },
+      { property: 'og:title', content: 'Studio Log | UOstudio Blog' },
+      { property: 'og:description', content: 'Read the latest articles, development logs, and updates from the UOstudio game development team.' },
+    ],
+  }),
   component: BlogIndex,
 })
 

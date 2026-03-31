@@ -12,6 +12,17 @@ import { createFileRoute, Link } from '@tanstack/react-router'
 import { useEffect, useRef, useState } from 'react'
 
 export const Route = createFileRoute('/')({
+  head: () => ({
+    meta: [
+      { title: 'UOstudio | Game Development & Design Studio' },
+      {
+        name: 'description',
+        content: 'UOstudio is an independent game development studio creating next-generation interactive entertainment & immersive 2D worlds.',
+      },
+      { property: 'og:title', content: 'UOstudio | Game Development & Design Studio' },
+      { property: 'og:description', content: 'UOstudio is an independent game development studio creating next-generation interactive entertainment & immersive 2D worlds.' },
+    ],
+  }),
   component: UOstudioHome,
 })
 
@@ -86,10 +97,11 @@ function Navigation() {
   }
 
   const navLinks = [
-    { label: 'About', id: 'about' },
-    { label: 'Services', id: 'services' },
-    { label: 'Founder', id: 'founder' },
-    { label: 'Contact', id: 'contact' },
+    { label: 'About', id: 'about', isRoute: false },
+    { label: 'Services', id: 'services', isRoute: false },
+    { label: 'Works', id: '/works', isRoute: true },
+    { label: 'Founder', id: 'founder', isRoute: false },
+    { label: 'Contact', id: 'contact', isRoute: false },
   ]
 
   return (
@@ -118,14 +130,24 @@ function Navigation() {
         {/* ── Desktop navigation links ── */}
         <ul className="hidden md:flex items-center gap-10">
           {navLinks.map((link) => (
-            <li key={link.id}>
-              <button
-                onClick={() => scrollTo(link.id)}
-                className="nav-link cursor-pointer bg-transparent border-none p-0 text-white hover:text-white/70 transition-colors"
-                style={{ fontFamily: 'Inter, sans-serif' }}
-              >
-                {link.label}
-              </button>
+            <li key={link.label}>
+              {!link.isRoute ? (
+                <button
+                  onClick={() => scrollTo(link.id)}
+                  className="nav-link cursor-pointer bg-transparent border-none p-0 text-white hover:text-white/70 transition-colors"
+                  style={{ fontFamily: 'Inter, sans-serif' }}
+                >
+                  {link.label}
+                </button>
+              ) : (
+                <Link
+                  to={link.id}
+                  className="nav-link cursor-pointer bg-transparent border-none p-0 text-white hover:text-white/70 transition-colors"
+                  style={{ fontFamily: 'Inter, sans-serif' }}
+                >
+                  {link.label}
+                </Link>
+              )}
             </li>
           ))}
           <li>
@@ -158,13 +180,22 @@ function Navigation() {
         <div className="md:hidden nav-blur border-t border-white/5 px-6 py-6">
           <ul className="flex flex-col gap-6">
             {navLinks.map((link) => (
-              <li key={link.id}>
-                <button
-                  onClick={() => scrollTo(link.id)}
-                  className="nav-link cursor-pointer bg-transparent border-none text-base text-white w-full text-left"
-                >
-                  {link.label}
-                </button>
+              <li key={link.label}>
+                {!link.isRoute ? (
+                  <button
+                    onClick={() => scrollTo(link.id)}
+                    className="nav-link cursor-pointer bg-transparent border-none text-base text-white w-full text-left"
+                  >
+                    {link.label}
+                  </button>
+                ) : (
+                  <Link
+                    to={link.id}
+                    className="nav-link cursor-pointer bg-transparent border-none text-base text-white w-full block"
+                  >
+                    {link.label}
+                  </Link>
+                )}
               </li>
             ))}
             <li>

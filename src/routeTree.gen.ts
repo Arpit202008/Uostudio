@@ -9,6 +9,7 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as WorksRouteImport } from './routes/works'
 import { Route as TermsAndConditionsRouteImport } from './routes/terms-and-conditions'
 import { Route as ResumeRouteImport } from './routes/resume'
 import { Route as ProjectsRouteImport } from './routes/projects'
@@ -19,6 +20,11 @@ import { Route as BlogIndexRouteImport } from './routes/blog/index'
 import { Route as BlogSlugRouteImport } from './routes/blog/$slug'
 import { Route as SrcPublicSrcRoutesContactRouteImport } from './routes/src/public/src/routes/contact'
 
+const WorksRoute = WorksRouteImport.update({
+  id: '/works',
+  path: '/works',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const TermsAndConditionsRoute = TermsAndConditionsRouteImport.update({
   id: '/terms-and-conditions',
   path: '/terms-and-conditions',
@@ -73,6 +79,7 @@ export interface FileRoutesByFullPath {
   '/projects': typeof ProjectsRoute
   '/resume': typeof ResumeRoute
   '/terms-and-conditions': typeof TermsAndConditionsRoute
+  '/works': typeof WorksRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/blog/': typeof BlogIndexRoute
   '/src/public/src/routes/contact': typeof SrcPublicSrcRoutesContactRoute
@@ -84,6 +91,7 @@ export interface FileRoutesByTo {
   '/projects': typeof ProjectsRoute
   '/resume': typeof ResumeRoute
   '/terms-and-conditions': typeof TermsAndConditionsRoute
+  '/works': typeof WorksRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/blog': typeof BlogIndexRoute
   '/src/public/src/routes/contact': typeof SrcPublicSrcRoutesContactRoute
@@ -96,6 +104,7 @@ export interface FileRoutesById {
   '/projects': typeof ProjectsRoute
   '/resume': typeof ResumeRoute
   '/terms-and-conditions': typeof TermsAndConditionsRoute
+  '/works': typeof WorksRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/blog/': typeof BlogIndexRoute
   '/src/public/src/routes/contact': typeof SrcPublicSrcRoutesContactRoute
@@ -109,6 +118,7 @@ export interface FileRouteTypes {
     | '/projects'
     | '/resume'
     | '/terms-and-conditions'
+    | '/works'
     | '/blog/$slug'
     | '/blog/'
     | '/src/public/src/routes/contact'
@@ -120,6 +130,7 @@ export interface FileRouteTypes {
     | '/projects'
     | '/resume'
     | '/terms-and-conditions'
+    | '/works'
     | '/blog/$slug'
     | '/blog'
     | '/src/public/src/routes/contact'
@@ -131,6 +142,7 @@ export interface FileRouteTypes {
     | '/projects'
     | '/resume'
     | '/terms-and-conditions'
+    | '/works'
     | '/blog/$slug'
     | '/blog/'
     | '/src/public/src/routes/contact'
@@ -143,6 +155,7 @@ export interface RootRouteChildren {
   ProjectsRoute: typeof ProjectsRoute
   ResumeRoute: typeof ResumeRoute
   TermsAndConditionsRoute: typeof TermsAndConditionsRoute
+  WorksRoute: typeof WorksRoute
   BlogSlugRoute: typeof BlogSlugRoute
   BlogIndexRoute: typeof BlogIndexRoute
   SrcPublicSrcRoutesContactRoute: typeof SrcPublicSrcRoutesContactRoute
@@ -150,6 +163,13 @@ export interface RootRouteChildren {
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/works': {
+      id: '/works'
+      path: '/works'
+      fullPath: '/works'
+      preLoaderRoute: typeof WorksRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/terms-and-conditions': {
       id: '/terms-and-conditions'
       path: '/terms-and-conditions'
@@ -223,6 +243,7 @@ const rootRouteChildren: RootRouteChildren = {
   ProjectsRoute: ProjectsRoute,
   ResumeRoute: ResumeRoute,
   TermsAndConditionsRoute: TermsAndConditionsRoute,
+  WorksRoute: WorksRoute,
   BlogSlugRoute: BlogSlugRoute,
   BlogIndexRoute: BlogIndexRoute,
   SrcPublicSrcRoutesContactRoute: SrcPublicSrcRoutesContactRoute,

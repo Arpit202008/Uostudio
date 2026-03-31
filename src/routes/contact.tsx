@@ -3,6 +3,17 @@ import { useState } from 'react'
 import { Mail, Send } from 'lucide-react'
 
 export const Route = createFileRoute('/contact')({
+  head: () => ({
+    meta: [
+      { title: 'Contact Us | UOstudio' },
+      {
+        name: 'description',
+        content: 'Get in touch with UOstudio for project collaborations, game development inquiries, and design services.',
+      },
+      { property: 'og:title', content: 'Contact Us | UOstudio' },
+      { property: 'og:description', content: 'Get in touch with UOstudio for project collaborations, game development inquiries, and design services.' },
+    ],
+  }),
   component: Contact,
 })
 

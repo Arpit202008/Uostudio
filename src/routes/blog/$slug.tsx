@@ -5,6 +5,47 @@ import { Badge } from '@/components/ui/badge'
 import { ArrowLeft, Calendar } from 'lucide-react'
 
 export const Route = createFileRoute('/blog/$slug')({
+  head: ({ params }) => {
+    const post = allBlogs.find((p) => p._meta.path === params.slug)
+    
+    return {
+      meta: [
+        { title: post ? `${post.title} | UOstudio` : 'Post Not Found | UOstudio' },
+        ...(post ? [
+          { name: 'description', content: post.summary },
+          { property: 'og:title', content: post.title },
+          { property: 'og:description', content: post.summary },
+          { property: 'og:type', content: 'article' },
+          ...(post.image ? [{ property: 'og:image', content: `https://uostudio.in${post.image}` }] : []),
+        ] : []),
+      ],
+      scripts: post ? [
+        {
+          type: 'application/ld+json',
+          children: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BlogPosting",
+            "headline": post.title,
+            "image": post.image ? `https://uostudio.in${post.image}` : "https://uostudio.in/logo.jpg",
+            "author": {
+              "@type": "Person",
+              "name": post.author
+            },
+            "publisher": {
+              "@type": "Organization",
+              "name": "UOstudio",
+              "logo": {
+                "@type": "ImageObject",
+                "url": "https://uostudio.in/logo.jpg"
+              }
+            },
+            "datePublished": post.date,
+            "description": post.summary
+          }),
+        },
+      ] : [],
+    }
+  },
   component: BlogPost,
 })
 

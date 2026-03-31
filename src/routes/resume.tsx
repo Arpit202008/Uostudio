@@ -12,6 +12,17 @@ import {
 } from '@/components/ui/hover-card'
 
 export const Route = createFileRoute('/resume')({
+  head: () => ({
+    meta: [
+      { title: 'Services & Resume | UOstudio' },
+      {
+        name: 'description',
+        content: 'Discover the capabilities and professional background of the UOstudio team, from 2D World Building to Multiplayer Systems.',
+      },
+      { property: 'og:title', content: 'Services & Resume | UOstudio' },
+      { property: 'og:description', content: 'Discover the capabilities and professional background of the UOstudio team, from 2D World Building to Multiplayer Systems.' },
+    ],
+  }),
   component: App,
 })
 

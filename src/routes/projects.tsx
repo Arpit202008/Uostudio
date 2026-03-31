@@ -5,6 +5,17 @@ import { Badge } from '@/components/ui/badge'
 import { ExternalLink, Github } from 'lucide-react'
 
 export const Route = createFileRoute('/projects')({
+  head: () => ({
+    meta: [
+      { title: 'Projects | UOstudio' },
+      {
+        name: 'description',
+        content: 'Explore the portfolio of games, design work, and interactive projects built by UOstudio.',
+      },
+      { property: 'og:title', content: 'Projects | UOstudio' },
+      { property: 'og:description', content: 'Explore the portfolio of games, design work, and interactive projects built by UOstudio.' },
+    ],
+  }),
   component: Projects,
 })
 
