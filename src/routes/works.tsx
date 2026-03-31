@@ -1,8 +1,32 @@
 import { createFileRoute, Link } from '@tanstack/react-router'
 import { ArrowLeft } from 'lucide-react'
+import { useEffect, useRef } from 'react'
 import { Footer } from './index'
 
-// Dummy Data for Marquees
+// ─── 3D Tilt hook for premium interactivity ──────────────────────────────────
+function useTilt(ref: React.RefObject<HTMLDivElement | null>) {
+  useEffect(() => {
+    const el = ref.current
+    if (!el) return
+    const handleMouseMove = (e: MouseEvent) => {
+      const rect = el.getBoundingClientRect()
+      const x = (e.clientX - rect.left) / rect.width - 0.5
+      const y = (e.clientY - rect.top) / rect.height - 0.5
+      el.style.transform = `perspective(1000px) rotateY(${x * 12}deg) rotateX(${-y * 12}deg) scale3d(1.02,1.02,1.02)`
+    }
+    const handleMouseLeave = () => {
+      el.style.transform = 'perspective(1000px) rotateY(0deg) rotateX(0deg) scale3d(1,1,1)'
+    }
+    el.addEventListener('mousemove', handleMouseMove)
+    el.addEventListener('mouseleave', handleMouseLeave)
+    return () => {
+      el.removeEventListener('mousemove', handleMouseMove)
+      el.removeEventListener('mouseleave', handleMouseLeave)
+    }
+  }, [ref])
+}
+
+// Project Data
 const ongoingProjects = [
   { name: 'Project Alpha', logo: '/logo.jpg' },
   { name: 'Neon Genesis', logo: '/logo.jpg' },
@@ -24,12 +48,12 @@ const completedProjects = [
 export const Route = createFileRoute('/works')({
   head: () => ({
     meta: [
-      { title: 'Project Pipeline | UOstudio' },
-      { name: 'description', content: 'Explore UOstudio ongoing and completed games and interactive experiences.' },
+      { title: 'Projects | UOstudio' },
+      { name: 'description', content: 'Explore UOstudio game development projects and interactive experiences.' },
       { name: 'application-name', content: 'UOstudio' },
       { property: 'og:site_name', content: 'UOstudio' },
-      { property: 'og:title', content: 'Project Pipeline | UOstudio' },
-      { property: 'og:description', content: 'Explore UOstudio ongoing and completed games and interactive experiences.' },
+      { property: 'og:title', content: 'Projects | UOstudio' },
+      { property: 'og:description', content: 'Explore UOstudio game development projects.' },
       { property: 'og:type', content: 'website' },
       { property: 'og:image', content: 'https://uostudio.in/logo.jpg' }
     ],
@@ -37,40 +61,34 @@ export const Route = createFileRoute('/works')({
   component: WorksPage,
 })
 
-function Marquee({ items, direction = 'left' }: { items: any[], direction?: 'left' | 'right' }) {
-  const animationClass = direction === 'left' ? 'animate-marquee' : 'animate-marquee-reverse'
-  
+function ProjectCard({ project }: { project: any }) {
+  const cardRef = useRef<HTMLDivElement>(null)
+  useTilt(cardRef)
+
   return (
-    <div className="relative flex overflow-hidden group w-full border-y border-white/5 bg-white/[0.02] py-8">
-      {/* Fade Overlays */}
-      <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-black to-transparent z-10 pointer-events-none" />
-      <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-black to-transparent z-10 pointer-events-none" />
+    <div className="flex flex-col items-center gap-4 group">
+      {/* 3D Rotating Box */}
+      <div 
+        ref={cardRef}
+        className="w-full aspect-square rounded-[2.5rem] overflow-hidden border border-white/10 glass-card transition-all duration-300 ease-out shadow-2xl relative group-hover:border-white/30"
+        style={{ transformStyle: 'preserve-3d' }}
+      >
+        <img 
+          src={project.logo} 
+          alt={project.name} 
+          className="w-full h-full object-cover p-8 opacity-70 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" 
+        />
+        {/* Subtle Inner Glow */}
+        <div className="absolute inset-0 bg-gradient-to-br from-white/10 to-transparent pointer-events-none" />
+      </div>
       
-      {/* Scrolling Content - Duplicated for infinite effect */}
-      <div className={`flex whitespace-nowrap ${animationClass} group-hover:[animation-play-state:paused]`}>
-        {items.map((item, idx) => (
-          <div key={idx} className="inline-flex items-center justify-center gap-4 mx-12">
-            <div className="w-12 h-12 shrink-0 rounded-lg overflow-hidden border border-white/10 glass-card">
-              <img src={item.logo} alt={item.name} className="w-full h-full object-cover" />
-            </div>
-            <span className="text-2xl md:text-3xl font-bold tracking-wider text-white/80 font-display">
-              {item.name}
-            </span>
-          </div>
-        ))}
-      </div>
-      <div className={`flex whitespace-nowrap ${animationClass} group-hover:[animation-play-state:paused]`} aria-hidden="true">
-        {items.map((item, idx) => (
-          <div key={`d-${idx}`} className="inline-flex items-center gap-4 mx-12">
-            <div className="w-12 h-12 shrink-0 rounded-lg overflow-hidden border border-white/10 glass-card">
-              <img src={item.logo} alt={item.name} className="w-full h-full object-cover" />
-            </div>
-            <span className="text-2xl md:text-3xl font-bold tracking-wider text-white/80 font-display">
-              {item.name}
-            </span>
-          </div>
-        ))}
-      </div>
+      {/* Project Name Below */}
+      <span 
+        className="font-display font-bold text-white/50 group-hover:text-white transition-colors duration-300 text-sm tracking-widest uppercase"
+        style={{ fontFamily: 'Orbitron, monospace' }}
+      >
+        {project.name}
+      </span>
     </div>
   )
 }
@@ -79,7 +97,7 @@ function WorksPage() {
   return (
     <div className="min-h-screen bg-black text-white selection:bg-white/20">
       <div className="max-w-7xl mx-auto px-6 md:px-10 pt-8 pb-12">
-        {/* White arrow icon back link */}
+        {/* Back Link */}
         <div className="mb-12">
           <Link 
             to="/" 
@@ -90,34 +108,40 @@ function WorksPage() {
           </Link>
         </div>
         
-        <div className="mb-20">
-          <h1 className="text-5xl md:text-7xl font-bold font-display tracking-tighter mb-6 relative">
-            <span className="text-gradient">Project</span> Pipeline
+        {/* Clean "Projects" Header */}
+        <div className="mb-24">
+          <h1 className="text-6xl md:text-8xl font-black font-display tracking-tighter mb-8 relative" style={{ fontFamily: 'Orbitron, monospace' }}>
+            <span className="text-gradient">Projects</span>
           </h1>
           <p className="text-xl text-white/50 max-w-2xl font-light leading-relaxed">
-            A real-time look into the worlds we're building and the experiences we've shipped. Innovation in motion.
+            Exploring the next frontier of immersive digital entertainment.
           </p>
         </div>
       </div>
 
-      <div className="space-y-32 pb-32">
+      <div className="max-w-7xl mx-auto px-6 md:px-10 space-y-40 pb-40">
         {/* Ongoing Section */}
         <section>
-          <div className="max-w-7xl mx-auto px-6 md:px-10 mb-8">
-            <div className="section-label bg-white/5 border-white/10 text-white">In Development</div>
-            <h2 className="text-3xl font-display font-medium text-white/90">Ongoing Projects</h2>
+          <div className="mb-12">
+            <div className="section-label bg-white/5 border-white/10 text-white inline-block">In Development</div>
           </div>
-          <Marquee items={ongoingProjects} direction="left" />
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-8 gap-y-16">
+            {ongoingProjects.map((project) => (
+              <ProjectCard key={project.name} project={project} />
+            ))}
+          </div>
         </section>
 
         {/* Completed Section */}
         <section>
-          <div className="max-w-7xl mx-auto px-6 md:px-10 mb-8">
-             <div className="section-label bg-white/5 border-white/10 text-white">Shipped</div>
-             <h2 className="text-3xl font-display font-medium text-white/90">Completed Projects</h2>
+          <div className="mb-12">
+            <div className="section-label bg-white/5 border-white/10 text-white inline-block">Completed</div>
           </div>
-          {/* Reverse direction for visual interest */}
-          <Marquee items={completedProjects} direction="right" />
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-8 gap-y-16">
+            {completedProjects.map((project) => (
+              <ProjectCard key={project.name} project={project} />
+            ))}
+          </div>
         </section>
       </div>
       <Footer showLogo={false} />
