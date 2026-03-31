@@ -18,14 +18,14 @@ function FounderPage() {
   useScrollReveal()
   return (
     <div className="bg-black min-h-screen text-white">
-      <main className="pt-24 min-h-[80vh]">
-        <div className="max-w-7xl mx-auto px-6 md:px-10 pb-4">
+      <main className="pt-8 min-h-screen">
+        <div className="max-w-7xl mx-auto px-6 md:px-10 mb-12">
           <Link 
             to="/" 
-            className="inline-flex items-center gap-2 text-white/50 hover:text-white transition-colors font-display text-sm uppercase tracking-widest"
+            className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-white/5 border border-white/10 text-white hover:bg-white/10 hover:scale-110 transition-all"
+            aria-label="Back to Home"
           >
-            <ArrowLeft size={16} />
-            Back to Home
+            <ArrowLeft size={24} />
           </Link>
         </div>
         <FounderSection />

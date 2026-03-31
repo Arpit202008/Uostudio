@@ -75,15 +75,17 @@ function Marquee({ items, direction = 'left' }: { items: any[], direction?: 'lef
 function WorksPage() {
   return (
     <div className="min-h-screen bg-black text-white selection:bg-white/20">
-      <div className="max-w-7xl mx-auto px-6 md:px-10 pt-10 pb-12">
-        {/* Simple Navbar Back Link */}
-        <Link 
-          to="/" 
-          className="inline-flex items-center gap-2 text-white/50 hover:text-white transition-colors mb-20 font-display text-sm uppercase tracking-widest"
-        >
-          <ArrowLeft size={16} />
-          Back to Home
-        </Link>
+      <div className="max-w-7xl mx-auto px-6 md:px-10 pt-8 pb-12">
+        {/* White arrow icon back link */}
+        <div className="mb-12">
+          <Link 
+            to="/" 
+            className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-white/5 border border-white/10 text-white hover:bg-white/10 hover:scale-110 transition-all font-display text-sm uppercase tracking-widest"
+            aria-label="Back to Home"
+          >
+            <ArrowLeft size={24} />
+          </Link>
+        </div>
         
         <div className="mb-20">
           <h1 className="text-5xl md:text-7xl font-bold font-display tracking-tighter mb-6 relative">

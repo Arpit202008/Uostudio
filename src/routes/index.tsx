@@ -10,6 +10,7 @@
 
 import { createFileRoute, Link } from '@tanstack/react-router'
 import { useEffect, useRef, useState } from 'react'
+import { HeaderNav } from '@/components/HeaderNav'
 
 export const Route = createFileRoute('/')({
   head: () => ({
@@ -800,6 +801,7 @@ function UOstudioHome() {
 
   return (
     <div className="min-h-screen bg-black">
+      <HeaderNav />
       {/* Main content starts here */}
 
       {/* Page sections — stacked vertically for single-page scroll experience */}
