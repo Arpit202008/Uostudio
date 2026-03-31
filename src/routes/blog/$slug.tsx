@@ -173,7 +173,7 @@ function BlogPost() {
             {/* Author Block */}
             <div className="mt-24 pt-10 border-t border-white/10 flex items-center gap-6">
                <div className="w-16 h-16 rounded-full overflow-hidden border border-white/20 shrink-0">
-                  <img src="/arpit.jpg" alt={post.author} className="w-full h-full object-cover" />
+                  <img src={post.authorImage || "/arpit.jpg"} alt={post.author} className="w-full h-full object-cover" />
                </div>
                <div>
                   <div className="text-white/40 text-[0.65rem] tracking-[0.2em] uppercase mb-1" style={{ fontFamily: 'Orbitron, monospace' }}>
