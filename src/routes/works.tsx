@@ -66,17 +66,17 @@ function ProjectCard({ project }: { project: any }) {
   useTilt(cardRef)
 
   return (
-    <div className="flex flex-col items-center gap-4 group">
+    <div className="flex flex-col items-center gap-6 group shrink-0">
       {/* 3D Rotating Box */}
       <div 
         ref={cardRef}
-        className="w-full aspect-square rounded-[2.5rem] overflow-hidden border border-white/10 glass-card transition-all duration-300 ease-out shadow-2xl relative group-hover:border-white/30"
+        className="w-64 h-64 md:w-80 md:h-80 rounded-[3rem] overflow-hidden border border-white/10 glass-card transition-all duration-300 ease-out shadow-2xl relative group-hover:border-white/30"
         style={{ transformStyle: 'preserve-3d' }}
       >
         <img 
           src={project.logo} 
           alt={project.name} 
-          className="w-full h-full object-cover p-8 opacity-70 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" 
+          className="w-full h-full object-cover p-12 opacity-80 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" 
         />
         {/* Subtle Inner Glow */}
         <div className="absolute inset-0 bg-gradient-to-br from-white/10 to-transparent pointer-events-none" />
@@ -84,7 +84,7 @@ function ProjectCard({ project }: { project: any }) {
       
       {/* Project Name Below */}
       <span 
-        className="font-display font-bold text-white/50 group-hover:text-white transition-colors duration-300 text-sm tracking-widest uppercase"
+        className="font-display font-bold text-white/40 group-hover:text-white transition-colors duration-300 text-xs tracking-[0.3em] uppercase"
         style={{ fontFamily: 'Orbitron, monospace' }}
       >
         {project.name}
@@ -93,9 +93,32 @@ function ProjectCard({ project }: { project: any }) {
   )
 }
 
+function InfiniteMarquee({ items, direction = 'left' }: { items: any[], direction?: 'left' | 'right' }) {
+  const scrollClass = direction === 'left' ? 'animate-marquee' : 'animate-marquee-reverse'
+  
+  return (
+    <div className="relative flex overflow-hidden group w-full py-12">
+      {/* Premium Fade Overlays */}
+      <div className="absolute left-0 top-0 bottom-0 w-32 md:w-64 bg-gradient-to-r from-black to-transparent z-10 pointer-events-none" />
+      <div className="absolute right-0 top-0 bottom-0 w-32 md:w-64 bg-gradient-to-l from-black to-transparent z-10 pointer-events-none" />
+      
+      {/* Marquee Track - Duplicated for infinite effect */}
+      <div className={`flex gap-12 md:gap-20 ${scrollClass} group-hover:[animation-play-state:paused]`} style={{ animationDuration: '80s' }}>
+        {items.map((project, idx) => (
+          <ProjectCard key={`${project.name}-${idx}`} project={project} />
+        ))}
+        {/* Clone for seamless loop */}
+        {items.map((project, idx) => (
+          <ProjectCard key={`${project.name}-clone-${idx}`} project={project} />
+        ))}
+      </div>
+    </div>
+  )
+}
+
 function WorksPage() {
   return (
-    <div className="min-h-screen bg-black text-white selection:bg-white/20">
+    <div className="min-h-screen bg-black text-white selection:bg-white/20 overflow-x-hidden">
       <div className="max-w-7xl mx-auto px-6 md:px-10 pt-8 pb-12">
         {/* Back Link */}
         <div className="mb-12">
@@ -119,29 +142,21 @@ function WorksPage() {
         </div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-6 md:px-10 space-y-40 pb-40">
+      <div className="space-y-40 pb-40">
         {/* Ongoing Section */}
         <section>
-          <div className="mb-12">
+          <div className="max-w-7xl mx-auto px-6 md:px-10 mb-12">
             <div className="section-label bg-white/5 border-white/10 text-white inline-block">In Development</div>
           </div>
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-8 gap-y-16">
-            {ongoingProjects.map((project) => (
-              <ProjectCard key={project.name} project={project} />
-            ))}
-          </div>
+          <InfiniteMarquee items={ongoingProjects} direction="left" />
         </section>
 
         {/* Completed Section */}
         <section>
-          <div className="mb-12">
+          <div className="max-w-7xl mx-auto px-6 md:px-10 mb-12">
             <div className="section-label bg-white/5 border-white/10 text-white inline-block">Completed</div>
           </div>
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-8 gap-y-16">
-            {completedProjects.map((project) => (
-              <ProjectCard key={project.name} project={project} />
-            ))}
-          </div>
+          <InfiniteMarquee items={completedProjects} direction="right" />
         </section>
       </div>
       <Footer showLogo={false} />
