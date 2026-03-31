@@ -31,7 +31,7 @@ export const Route = createFileRoute('/')({
  * useScrollReveal — Observes elements with a given selector and adds the
  * "visible" class when they enter the viewport. Drives all section animations.
  */
-function useScrollReveal(selector = '.reveal, .reveal-left, .reveal-right') {
+export function useScrollReveal(selector = '.reveal, .reveal-left, .reveal-right') {
   useEffect(() => {
     const elements = document.querySelectorAll(selector)
     const observer = new IntersectionObserver(
@@ -54,7 +54,7 @@ function useScrollReveal(selector = '.reveal, .reveal-left, .reveal-right') {
  * useTilt — Applies a subtle 3D perspective tilt to a card element
  * based on mouse position for a premium interactive feel.
  */
-function useTilt(ref: React.RefObject<HTMLDivElement | null>) {
+export function useTilt(ref: React.RefObject<HTMLDivElement | null>) {
   useEffect(() => {
     const el = ref.current
     if (!el) return
@@ -76,143 +76,7 @@ function useTilt(ref: React.RefObject<HTMLDivElement | null>) {
   }, [ref])
 }
 
-// ─── Navigation ───────────────────────────────────────────────────────────────
-/**
- * Navigation bar with glass blur background, UOstudio logo, and
- * smooth-scroll anchor links. Becomes more opaque on scroll.
- */
-function Navigation() {
-  const [scrolled, setScrolled] = useState(false)
-  const [menuOpen, setMenuOpen] = useState(false)
-
-  useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 50)
-    window.addEventListener('scroll', handleScroll)
-    return () => window.removeEventListener('scroll', handleScroll)
-  }, [])
-
-  const scrollTo = (id: string) => {
-    setMenuOpen(false)
-    document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' })
-  }
-
-  const navLinks = [
-    { label: 'About', id: 'about', isRoute: false },
-    { label: 'Services', id: 'services', isRoute: false },
-    { label: 'Works', id: '/works', isRoute: true },
-    { label: 'Founder', id: 'founder', isRoute: false },
-    { label: 'Contact', id: 'contact', isRoute: false },
-  ]
-
-  return (
-    // Fixed top nav with glass blur; border becomes visible after scroll
-    <nav
-      className="fixed top-0 left-0 right-0 z-50 nav-blur transition-all duration-300"
-      style={{ borderBottomColor: scrolled ? 'rgba(255,255,255,0.1)' : 'transparent' }}
-    >
-      <div className="max-w-7xl mx-auto px-6 md:px-10 h-16 flex items-center justify-between">
-
-        {/* ── Logo placeholder + studio name ── */}
-        <button
-          onClick={() => scrollTo('hero')}
-          className="flex items-center gap-3 group cursor-pointer"
-          aria-label="UOstudio home"
-        >
-          <img src="/logo.jpg" alt="UOstudio logo" className="w-8 h-8 rounded-sm object-cover" />
-          <span
-            className="font-display font-bold text-white tracking-widest text-sm uppercase"
-            style={{ fontFamily: 'Orbitron, monospace' }}
-          >
-            UOstudio
-          </span>
-        </button>
-
-        {/* ── Desktop navigation links ── */}
-        <ul className="hidden md:flex items-center gap-10">
-          {navLinks.map((link) => (
-            <li key={link.label}>
-              {!link.isRoute ? (
-                <button
-                  onClick={() => scrollTo(link.id)}
-                  className="nav-link cursor-pointer bg-transparent border-none p-0 text-white hover:text-white/70 transition-colors"
-                  style={{ fontFamily: 'Inter, sans-serif' }}
-                >
-                  {link.label}
-                </button>
-              ) : (
-                <Link
-                  to={link.id}
-                  className="nav-link cursor-pointer bg-transparent border-none p-0 text-white hover:text-white/70 transition-colors"
-                  style={{ fontFamily: 'Inter, sans-serif' }}
-                >
-                  {link.label}
-                </Link>
-              )}
-            </li>
-          ))}
-          <li>
-            <Link
-              to="/blog"
-              className="nav-link cursor-pointer bg-transparent border-none p-0 text-white hover:text-white/70 transition-colors"
-              style={{ fontFamily: 'Inter, sans-serif' }}
-            >
-              Blog
-            </Link>
-          </li>
-        </ul>
-
-        {/* Removed Get In Touch CTA button (desktop) */}
-
-        {/* ── Mobile hamburger ── */}
-        <button
-          onClick={() => setMenuOpen(!menuOpen)}
-          className="md:hidden flex flex-col gap-1.5 p-2 cursor-pointer bg-transparent border-none"
-          aria-label="Toggle mobile menu"
-        >
-          <span className={`block w-6 h-px bg-white transition-all duration-300 ${menuOpen ? 'rotate-45 translate-y-2' : ''}`} />
-          <span className={`block w-6 h-px bg-white transition-all duration-300 ${menuOpen ? 'opacity-0' : ''}`} />
-          <span className={`block w-6 h-px bg-white transition-all duration-300 ${menuOpen ? '-rotate-45 -translate-y-2' : ''}`} />
-        </button>
-      </div>
-
-      {/* ── Mobile dropdown menu ── */}
-      {menuOpen && (
-        <div className="md:hidden nav-blur border-t border-white/5 px-6 py-6">
-          <ul className="flex flex-col gap-6">
-            {navLinks.map((link) => (
-              <li key={link.label}>
-                {!link.isRoute ? (
-                  <button
-                    onClick={() => scrollTo(link.id)}
-                    className="nav-link cursor-pointer bg-transparent border-none text-base text-white w-full text-left"
-                  >
-                    {link.label}
-                  </button>
-                ) : (
-                  <Link
-                    to={link.id}
-                    className="nav-link cursor-pointer bg-transparent border-none text-base text-white w-full block"
-                  >
-                    {link.label}
-                  </Link>
-                )}
-              </li>
-            ))}
-            <li>
-              <Link
-                to="/blog"
-                className="nav-link cursor-pointer bg-transparent border-none text-base text-white w-full block"
-              >
-                Blog
-              </Link>
-            </li>
-            {/* Removed Get In Touch (mobile) */}
-          </ul>
-        </div>
-      )}
-    </nav>
-  )
-}
+// Navigation moved to src/components/HeaderNav.tsx
 
 // ─── Hero Section ─────────────────────────────────────────────────────────────
 /**
@@ -220,7 +84,7 @@ function Navigation() {
  * large display typography, and a call-to-action. Creates the premium
  * 3D spacial feel of a cutting-edge game studio.
  */
-function HeroSection() {
+export function HeroSection() {
   const [scrollY, setScrollY] = useState(0)
   useEffect(() => {
     const handleScroll = () => setScrollY(window.scrollY)
@@ -331,7 +195,7 @@ function HeroSection() {
  * Uses a two-column layout on desktop with a large decorative number.
  * Glassmorphism cards display key stats/values.
  */
-function AboutSection() {
+export function AboutSection() {
   const statsCards = [
     { value: '2026', label: 'Founded' },
     { value: '∞', label: 'Ambition' },
@@ -457,7 +321,7 @@ function AboutSection() {
  * Six glassmorphism service cards with icons, each showcasing a studio specialty.
  * Hover effects add a 3D depth illusion via CSS transforms.
  */
-function ServicesSection() {
+export function ServicesSection() {
   // Each service includes a large unicode/emoji icon, title, and description
   const services = [
     {
@@ -573,7 +437,7 @@ function ServicesSection() {
  * Features a photo placeholder with glassmorphism overlay and a bio card.
  * The card uses 3D tilt on mouse move for premium interactivity.
  */
-function FounderSection() {
+export function FounderSection() {
   const cardRef = useRef<HTMLDivElement>(null)
   const coFounderRef = useRef<HTMLDivElement>(null)
   useTilt(cardRef)
@@ -727,7 +591,7 @@ function FounderSection() {
  * The form posts to Netlify Forms via the static HTML fallback pattern.
  * Includes honeypot spam protection.
  */
-function ContactSection() {
+export function ContactSection() {
   return (
     <section id="contact" className="relative py-32 px-6 overflow-hidden w-full flex flex-col items-center justify-center">
 
@@ -823,7 +687,7 @@ function ContactSection() {
  * Footer with logo, studio tagline, navigation links, and copyright.
  * Clean minimal design that closes the page with finality.
  */
-function Footer() {
+export function Footer() {
   const scrollTo = (id: string) => {
     document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' })
   }
@@ -936,8 +800,7 @@ function UOstudioHome() {
 
   return (
     <div className="min-h-screen bg-black">
-      {/* Fixed navigation overlay */}
-      <Navigation />
+      {/* Main content starts here */}
 
       {/* Page sections — stacked vertically for single-page scroll experience */}
       <main>

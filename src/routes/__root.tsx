@@ -1,9 +1,5 @@
-/**
- * Root layout for UOstudio website.
- * Provides the base HTML shell, loads Google Fonts (Orbitron + Inter),
- * sets page metadata, and injects global scripts/styles.
- */
 import { HeadContent, Scripts, createRootRoute, Outlet } from '@tanstack/react-router'
+import { HeaderNav } from '@/components/HeaderNav'
 import '../styles.css'
 
 export const Route = createRootRoute({
@@ -100,8 +96,11 @@ function RootDocument({ children }: { children: React.ReactNode }) {
         <HeadContent />
       </head>
       {/* Dark background applied at body level for the premium monochrome theme */}
-      <body className="bg-black text-white overflow-x-hidden">
-        {children}
+      <body className="bg-black text-white overflow-x-hidden min-h-screen flex flex-col">
+        <HeaderNav />
+        <main className="flex-grow">
+          {children}
+        </main>
         <Scripts />
       </body>
     </html>
