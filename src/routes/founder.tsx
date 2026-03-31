@@ -7,6 +7,8 @@ export const Route = createFileRoute('/founder')({
     meta: [
       { title: 'The Founder | UOstudio' },
       { name: 'description', content: 'Meet Arpit Chourasia, the founder and lead developer at UOstudio.' },
+      { name: 'application-name', content: 'UOstudio' },
+      { property: 'og:site_name', content: 'UOstudio' },
       { property: 'og:title', content: 'The Founder | UOstudio' },
       { property: 'og:description', content: 'Meet Arpit Chourasia, the founder and lead developer at UOstudio.' },
     ],

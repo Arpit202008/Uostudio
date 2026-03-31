@@ -13,6 +13,8 @@ export const Route = createFileRoute('/blog/$slug')({
         { title: post ? `${post.title} | UOstudio` : 'Post Not Found | UOstudio' },
         ...(post ? [
           { name: 'description', content: post.summary },
+          { name: 'application-name', content: 'UOstudio' },
+          { property: 'og:site_name', content: 'UOstudio' },
           { property: 'og:title', content: post.title },
           { property: 'og:description', content: post.summary },
           { property: 'og:type', content: 'article' },

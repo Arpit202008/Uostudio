@@ -20,6 +20,8 @@ export const Route = createFileRoute('/')({
         name: 'description',
         content: 'UOstudio is an independent game development studio creating next-generation interactive entertainment & immersive 2D worlds.',
       },
+      { name: 'application-name', content: 'UOstudio' },
+      { property: 'og:site_name', content: 'UOstudio' },
       { property: 'og:title', content: 'UOstudio | Game Development & Design Studio' },
       { property: 'og:description', content: 'UOstudio is an independent game development studio creating next-generation interactive entertainment & immersive 2D worlds.' },
     ],

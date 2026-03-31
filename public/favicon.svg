@@ -1,4 +1,5 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
-  <rect width="200" height="200" fill="#000" />
-  <text x="50%" y="54%" font-family="monospace, sans-serif" font-weight="bold" font-size="34" fill="#fff" text-anchor="middle" dominant-baseline="middle">UOstudio</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <rect width="512" height="512" rx="64" fill="#000000" />
+  <path d="M128 128V320C128 355.346 156.654 384 192 384H320C355.346 384 384 355.346 384 320V128H344V320C344 333.255 333.255 344 320 344H192C178.745 344 168 333.255 168 320V128H128Z" fill="#FFFFFF" />
+  <text x="50%" y="50%" font-family="Orbitron, monospace" font-weight="900" font-size="160" fill="#FFFFFF" text-anchor="middle" dominant-baseline="middle">UO</text>
 </svg>

@@ -26,6 +26,8 @@ export const Route = createFileRoute('/works')({
     meta: [
       { title: 'Project Pipeline | UOstudio' },
       { name: 'description', content: 'Explore UOstudio ongoing and completed games and interactive experiences.' },
+      { name: 'application-name', content: 'UOstudio' },
+      { property: 'og:site_name', content: 'UOstudio' },
       { property: 'og:title', content: 'Project Pipeline | UOstudio' },
       { property: 'og:description', content: 'Explore UOstudio ongoing and completed games and interactive experiences.' },
       { property: 'og:type', content: 'website' },

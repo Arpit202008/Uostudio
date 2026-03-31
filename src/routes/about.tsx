@@ -7,6 +7,8 @@ export const Route = createFileRoute('/about')({
     meta: [
       { title: 'About Us | UOstudio' },
       { name: 'description', content: 'Learn about UOstudio, our vision, and our journey building legendary interactive entertainment.' },
+      { name: 'application-name', content: 'UOstudio' },
+      { property: 'og:site_name', content: 'UOstudio' },
       { property: 'og:title', content: 'About Us | UOstudio' },
       { property: 'og:description', content: 'Learn about UOstudio, our vision, and our journey building legendary interactive entertainment.' },
     ],

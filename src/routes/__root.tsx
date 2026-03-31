@@ -12,6 +12,9 @@ export const Route = createRootRoute({
         content:
           'UOstudio is a premium game development studio crafting immersive worlds, unforgettable experiences, and next-generation interactive entertainment.',
       },
+      // Essential Brand Identity for Search Engines
+      { name: 'application-name', content: 'UOstudio' },
+      { name: 'apple-mobile-web-app-title', content: 'UOstudio' },
       // Open Graph tags
       { property: 'og:site_name', content: 'UOstudio' },
       { property: 'og:title', content: 'UOstudio — Game Development Studio' },

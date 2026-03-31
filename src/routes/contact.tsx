@@ -10,6 +10,8 @@ export const Route = createFileRoute('/contact')({
         name: 'description',
         content: 'Get in touch with UOstudio for project collaborations, game development inquiries, and design services.',
       },
+      { name: 'application-name', content: 'UOstudio' },
+      { property: 'og:site_name', content: 'UOstudio' },
       { property: 'og:title', content: 'Contact Us | UOstudio' },
       { property: 'og:description', content: 'Get in touch with UOstudio for project collaborations, game development inquiries, and design services.' },
     ],

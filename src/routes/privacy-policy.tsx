@@ -2,6 +2,14 @@ import { createFileRoute, Link } from '@tanstack/react-router'
 import { ArrowLeft } from 'lucide-react'
 
 export const Route = createFileRoute('/privacy-policy')({
+  head: () => ({
+    meta: [
+      { title: 'Privacy Policy | UOstudio' },
+      { name: 'description', content: 'Our commitment to protecting your privacy at UOstudio.' },
+      { name: 'application-name', content: 'UOstudio' },
+      { property: 'og:site_name', content: 'UOstudio' },
+    ],
+  }),
   component: PrivacyPolicy,
 })
 
