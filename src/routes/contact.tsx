@@ -5,15 +5,15 @@ import { ContactSection, Footer, useScrollReveal } from './index'
 export const Route = createFileRoute('/contact')({
   head: () => ({
     meta: [
-      { title: 'Contact Us | UOstudio' },
+      { title: 'Contact Us | UOStudio' },
       {
         name: 'description',
-        content: 'Get in touch with UOstudio for project collaborations, game development inquiries, and design services.',
+        content: 'Get in touch with UOStudio for project collaborations, game development inquiries, and design services.',
       },
-      { name: 'application-name', content: 'UOstudio' },
-      { property: 'og:site_name', content: 'UOstudio' },
-      { property: 'og:title', content: 'Contact Us | UOstudio' },
-      { property: 'og:description', content: 'Get in touch with UOstudio for project collaborations, game development inquiries, and design services.' },
+      { name: 'application-name', content: 'UOStudio' },
+      { property: 'og:site_name', content: 'UOStudio' },
+      { property: 'og:title', content: 'Contact Us | UOStudio' },
+      { property: 'og:description', content: 'Get in touch with UOStudio for project collaborations, game development inquiries, and design services.' },
     ],
   }),
   component: ContactPage,

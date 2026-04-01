@@ -48,14 +48,14 @@ const completedProjects = [
 export const Route = createFileRoute('/works')({
   head: () => ({
     meta: [
-      { title: 'Projects | UOstudio' },
-      { name: 'description', content: 'Explore UOstudio game development projects and interactive experiences.' },
-      { name: 'application-name', content: 'UOstudio' },
-      { property: 'og:site_name', content: 'UOstudio' },
-      { property: 'og:title', content: 'Projects | UOstudio' },
-      { property: 'og:description', content: 'Explore UOstudio game development projects.' },
+      { title: 'Projects | UOStudio' },
+      { name: 'description', content: 'Explore UOStudio game development projects and interactive experiences.' },
+      { name: 'application-name', content: 'UOStudio' },
+      { property: 'og:site_name', content: 'UOStudio' },
+      { property: 'og:title', content: 'Projects | UOStudio' },
+      { property: 'og:description', content: 'Explore UOStudio game development projects.' },
       { property: 'og:type', content: 'website' },
-      { property: 'og:image', content: 'https://uostudio.in/logo.jpg' }
+      { property: 'og:image', content: 'https://UOStudio.in/logo.jpg' }
     ],
   }),
   component: WorksPage,

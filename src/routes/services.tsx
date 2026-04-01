@@ -5,12 +5,12 @@ import { ServicesSection, Footer, useScrollReveal } from './index'
 export const Route = createFileRoute('/services')({
   head: () => ({
     meta: [
-      { title: 'Our Services | UOstudio' },
-      { name: 'description', content: 'Explore UOstudio game development capabilities, from 2D world building to multiplayer logic.' },
-      { name: 'application-name', content: 'UOstudio' },
-      { property: 'og:site_name', content: 'UOstudio' },
-      { property: 'og:title', content: 'Our Services | UOstudio' },
-      { property: 'og:description', content: 'Explore UOstudio game development capabilities, from 2D world building to multiplayer logic.' },
+      { title: 'Our Services | UOStudio' },
+      { name: 'description', content: 'Explore UOStudio game development capabilities, from 2D world building to multiplayer logic.' },
+      { name: 'application-name', content: 'UOStudio' },
+      { property: 'og:site_name', content: 'UOStudio' },
+      { property: 'og:title', content: 'Our Services | UOStudio' },
+      { property: 'og:description', content: 'Explore UOStudio game development capabilities, from 2D world building to multiplayer logic.' },
     ],
   }),
   component: ServicesPage,

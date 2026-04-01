@@ -10,7 +10,7 @@ export const Route = createRootRoute({
       {
         name: 'description',
         content:
-          'UOstudio is a premium game development studio crafting immersive worlds, unforgettable experiences, and next-generation interactive entertainment.',
+          'UOStudio is a premium game development studio crafting immersive worlds, unforgettable experiences, and next-generation interactive entertainment.',
       },
       // Essential Brand Identity for Search Engines
       { name: 'application-name', content: 'UOStudio' },
@@ -18,15 +18,15 @@ export const Route = createRootRoute({
       // Open Graph tags
       { property: 'og:site_name', content: 'UOStudio' },
       { property: 'og:title', content: 'UOStudio — Game Development Studio' },
-      { property: 'og:description', content: 'UOstudio is an independent game development studio creating next-generation interactive entertainment & immersive 2D worlds.' },
+      { property: 'og:description', content: 'UOStudio is an independent game development studio creating next-generation interactive entertainment & immersive 2D worlds.' },
       { property: 'og:type', content: 'website' },
-      { property: 'og:url', content: 'https://uostudio.in' },
-      { property: 'og:image', content: 'https://uostudio.in/logo.jpg' },
+      { property: 'og:url', content: 'https://UOStudio.in' },
+      { property: 'og:image', content: 'https://UOStudio.in/logo.jpg' },
       // Twitter Card tags
       { name: 'twitter:card', content: 'summary_large_image' },
       { name: 'twitter:title', content: 'UOStudio — Game Development Studio' },
-      { name: 'twitter:description', content: 'UOstudio is a premium game development studio.' },
-      { name: 'twitter:image', content: 'https://uostudio.in/logo.jpg' }
+      { name: 'twitter:description', content: 'UOStudio is a premium game development studio.' },
+      { name: 'twitter:image', content: 'https://UOStudio.in/logo.jpg' }
     ],
     links: [
       { rel: 'icon', type: 'image/jpeg', href: '/logo.jpg', sizes: '192x192' },
@@ -56,14 +56,14 @@ export const Route = createRootRoute({
             "@context": "https://schema.org",
             "@type": "WebSite",
             "name": "UOStudio",
-            "url": "https://uostudio.in/"
+            "url": "https://UOStudio.in/"
           },
           {
             "@context": "https://schema.org",
             "@type": "Organization",
             "name": "UOStudio",
-            "url": "https://uostudio.in",
-            "logo": "https://uostudio.in/logo.jpg",
+            "url": "https://UOStudio.in",
+            "logo": "https://UOStudio.in/logo.jpg",
             "email": "thecompanyuo@gmail.com",
             "address": {
               "@type": "PostalAddress",

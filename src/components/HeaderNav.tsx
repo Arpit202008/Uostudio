@@ -41,7 +41,7 @@ export function HeaderNav() {
           to="/"
           onClick={scrollToHero}
           className="flex items-center gap-3 group cursor-pointer"
-          aria-label="UOstudio home"
+          aria-label="UOStudio home"
         >
           <img src="/logo.jpg" alt="UOStudio logo" className="w-8 h-8 rounded-sm object-cover" />
           <span

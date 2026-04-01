@@ -10,15 +10,15 @@ export const Route = createFileRoute('/blog/$slug')({
     
     return {
       meta: [
-        { title: post ? `${post.title} | UOstudio` : 'Post Not Found | UOstudio' },
+        { title: post ? `${post.title} | UOStudio` : 'Post Not Found | UOStudio' },
         ...(post ? [
           { name: 'description', content: post.summary },
-          { name: 'application-name', content: 'UOstudio' },
-          { property: 'og:site_name', content: 'UOstudio' },
+          { name: 'application-name', content: 'UOStudio' },
+          { property: 'og:site_name', content: 'UOStudio' },
           { property: 'og:title', content: post.title },
           { property: 'og:description', content: post.summary },
           { property: 'og:type', content: 'article' },
-          ...(post.image ? [{ property: 'og:image', content: `https://uostudio.in${post.image}` }] : []),
+          ...(post.image ? [{ property: 'og:image', content: `https://UOStudio.in${post.image}` }] : []),
         ] : []),
       ],
       scripts: post ? [
@@ -28,17 +28,17 @@ export const Route = createFileRoute('/blog/$slug')({
             "@context": "https://schema.org",
             "@type": "BlogPosting",
             "headline": post.title,
-            "image": post.image ? `https://uostudio.in${post.image}` : "https://uostudio.in/logo.jpg",
+            "image": post.image ? `https://UOStudio.in${post.image}` : "https://UOStudio.in/logo.jpg",
             "author": {
               "@type": "Person",
               "name": post.author
             },
             "publisher": {
               "@type": "Organization",
-              "name": "UOstudio",
+              "name": "UOStudio",
               "logo": {
                 "@type": "ImageObject",
-                "url": "https://uostudio.in/logo.jpg"
+                "url": "https://UOStudio.in/logo.jpg"
               }
             },
             "datePublished": post.date,

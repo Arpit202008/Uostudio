@@ -4,10 +4,10 @@ import { ArrowLeft } from 'lucide-react'
 export const Route = createFileRoute('/terms-and-conditions')({
   head: () => ({
     meta: [
-      { title: 'Terms & Conditions | UOstudio' },
-      { name: 'description', content: 'Our standard terms and conditions for using UOstudio services.' },
-      { name: 'application-name', content: 'UOstudio' },
-      { property: 'og:site_name', content: 'UOstudio' },
+      { title: 'Terms & Conditions | UOStudio' },
+      { name: 'description', content: 'Our standard terms and conditions for using UOStudio services.' },
+      { name: 'application-name', content: 'UOStudio' },
+      { property: 'og:site_name', content: 'UOStudio' },
     ],
   }),
   component: TermsAndConditions,

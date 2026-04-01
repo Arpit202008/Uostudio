@@ -6,13 +6,13 @@ import { ArrowLeft, Calendar, ArrowRight } from 'lucide-react'
 export const Route = createFileRoute('/blog/')({
   head: () => ({
     meta: [
-      { title: 'Studio Log | UOstudio Blog' },
+      { title: 'Studio Log | UOStudio Blog' },
       {
         name: 'description',
-        content: 'Read the latest articles, development logs, and updates from the UOstudio game development team.',
+        content: 'Read the latest articles, development logs, and updates from the UOStudio game development team.',
       },
-      { property: 'og:title', content: 'Studio Log | UOstudio Blog' },
-      { property: 'og:description', content: 'Read the latest articles, development logs, and updates from the UOstudio game development team.' },
+      { property: 'og:title', content: 'Studio Log | UOStudio Blog' },
+      { property: 'og:description', content: 'Read the latest articles, development logs, and updates from the UOStudio game development team.' },
     ],
   }),
   component: BlogIndex,
@@ -69,7 +69,7 @@ function BlogIndex() {
             </h1>
           </div>
           <p className="text-white/50 max-w-sm text-sm md:text-base leading-relaxed md:text-right" style={{ fontFamily: 'Inter, sans-serif' }}>
-            Thoughts, updates, and deep dives into game development, technology, and the journey of building UOstudio.
+            Thoughts, updates, and deep dives into game development, technology, and the journey of building UOStudio.
           </p>
         </div>
 

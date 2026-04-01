@@ -5,12 +5,12 @@ import { AboutSection, Footer, useScrollReveal } from './index'
 export const Route = createFileRoute('/about')({
   head: () => ({
     meta: [
-      { title: 'About Us | UOstudio' },
-      { name: 'description', content: 'Learn about UOstudio, our vision, and our journey building legendary interactive entertainment.' },
-      { name: 'application-name', content: 'UOstudio' },
-      { property: 'og:site_name', content: 'UOstudio' },
-      { property: 'og:title', content: 'About Us | UOstudio' },
-      { property: 'og:description', content: 'Learn about UOstudio, our vision, and our journey building legendary interactive entertainment.' },
+      { title: 'About Us | UOStudio' },
+      { name: 'description', content: 'Learn about UOStudio, our vision, and our journey building legendary interactive entertainment.' },
+      { name: 'application-name', content: 'UOStudio' },
+      { property: 'og:site_name', content: 'UOStudio' },
+      { property: 'og:title', content: 'About Us | UOStudio' },
+      { property: 'og:description', content: 'Learn about UOStudio, our vision, and our journey building legendary interactive entertainment.' },
     ],
   }),
   component: AboutPage,

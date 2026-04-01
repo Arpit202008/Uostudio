@@ -1,7 +1,7 @@
 /**
- * UOstudio — Main Landing Page
+ * UOStudio — Main Landing Page
  *
- * A single-page premium website for UOstudio game development studio.
+ * A single-page premium website for UOStudio game development studio.
  * Sections: Navigation, Hero, About, Services, Founder, Contact, Footer.
  *
  * Design: Black-and-white monochrome with 3D CSS effects, glassmorphism,
@@ -18,15 +18,15 @@ export const Route = createFileRoute('/')({
       { title: 'UOStudio' },
       {
         name: 'description',
-        content: 'UOstudio is an independent game development studio creating next-generation interactive entertainment & immersive 2D worlds.',
+        content: 'UOStudio is an independent game development studio creating next-generation interactive entertainment & immersive 2D worlds.',
       },
       { name: 'application-name', content: 'UOStudio' },
       { property: 'og:site_name', content: 'UOStudio' },
       { property: 'og:title', content: 'UOStudio' },
-      { property: 'og:description', content: 'UOstudio is an independent game development studio creating next-generation interactive entertainment & immersive 2D worlds.' },
+      { property: 'og:description', content: 'UOStudio is an independent game development studio creating next-generation interactive entertainment & immersive 2D worlds.' },
     ],
   }),
-  component: UOstudioHome,
+  component: UOStudioHome,
 })
 
 // ─── Scroll reveal hook ───────────────────────────────────────────────────────
@@ -153,7 +153,7 @@ export function HeroSection() {
             letterSpacing: '-0.02em',
           }}
         >
-          UOstudio
+          UOStudio
         </h1>
 
         {/* Tagline */}
@@ -242,13 +242,13 @@ export function AboutSection() {
           {/* Left: studio story */}
           <div className="space-y-6">
             <p className="reveal delay-100 text-white/70 text-lg leading-relaxed">
-              UOstudio is an independent game development studio with a singular mission:
+              UOStudio is an independent game development studio with a singular mission:
               to create games that players never forget. We blend cutting-edge technology
               with powerful storytelling to deliver immersive experiences that push the
               boundaries of interactive entertainment.
             </p>
             <p className="reveal delay-200 text-white/50 leading-relaxed">
-              Founded with a passion for bold ideas and technical excellence, UOstudio
+              Founded with a passion for bold ideas and technical excellence, UOStudio
               operates at the intersection of art and engineering. Every pixel, every
               frame, every mechanic is crafted with intention—because great games
               aren't just played, they're felt.
@@ -516,7 +516,7 @@ export function FounderSection() {
             {/* Divider */}
             {/* Bio paragraphs */}
             <p className="text-white/60 text-sm leading-relaxed mb-6">
-              Arpit Chourasia is a visionary game developer and entrepreneur with a deep passion for creating worlds that resonate. With a background in game design and interactive storytelling, he leads UOstudio with a hands-on approach to deliver exceptional player-focused experiences. His dedication to continuous innovation aims to position UOstudio as a globally recognized name in the gaming industry.
+              Arpit Chourasia is a visionary game developer and entrepreneur with a deep passion for creating worlds that resonate. With a background in game design and interactive storytelling, he leads UOStudio with a hands-on approach to deliver exceptional player-focused experiences. His dedication to continuous innovation aims to position UOStudio as a globally recognized name in the gaming industry.
             </p>
 
             {/* Contact CTA */}
@@ -577,7 +577,7 @@ export function FounderSection() {
             </div>
             <div className="glow-line mb-6" />
             <p className="text-white/60 text-sm leading-relaxed mb-4">
-              Raushan Raj is the creative backbone of UOstudio, bringing imagination to life through compelling visuals and innovative design thinking. He leads the visual and conceptual direction of every project, ensuring each idea transforms into an immersive 2D world. His expertise spans art direction and UI/UX design, allowing him to craft visually engaging experiences that build the studio’s unique identity.
+              Raushan Raj is the creative backbone of UOStudio, bringing imagination to life through compelling visuals and innovative design thinking. He leads the visual and conceptual direction of every project, ensuring each idea transforms into an immersive 2D world. His expertise spans art direction and UI/UX design, allowing him to craft visually engaging experiences that build the studio’s unique identity.
             </p>
           </div>
         </div>
@@ -651,11 +651,11 @@ export function ContactSection() {
                   <svg viewBox="0 0 24 24" width="28" height="28" stroke="currentColor" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
                 </a>
                 {/* Instagram */}
-                <a href="https://www.instagram.com/uostudio.in?igsh=MXZjeTl3ZWt3aXdiZA==" target="_blank" rel="noreferrer" className="flex items-center justify-center w-20 h-20 rounded-full border border-white/20 text-white/60 hover:text-white hover:border-white/50 hover:bg-white/10 hover:-translate-y-1 hover:scale-[1.1] transition-all duration-300">
+                <a href="https://www.instagram.com/UOStudio.in?igsh=MXZjeTl3ZWt3aXdiZA==" target="_blank" rel="noreferrer" className="flex items-center justify-center w-20 h-20 rounded-full border border-white/20 text-white/60 hover:text-white hover:border-white/50 hover:bg-white/10 hover:-translate-y-1 hover:scale-[1.1] transition-all duration-300">
                   <svg viewBox="0 0 24 24" width="28" height="28" stroke="currentColor" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
                 </a>
                 {/* LinkedIn */}
-                <a href="https://linkedin.com/company/uostudio" target="_blank" rel="noreferrer" className="flex items-center justify-center w-20 h-20 rounded-full border border-white/20 text-white/60 hover:text-white hover:border-white/50 hover:bg-white/10 hover:-translate-y-1 hover:scale-[1.1] transition-all duration-300">
+                <a href="https://linkedin.com/company/UOStudio" target="_blank" rel="noreferrer" className="flex items-center justify-center w-20 h-20 rounded-full border border-white/20 text-white/60 hover:text-white hover:border-white/50 hover:bg-white/10 hover:-translate-y-1 hover:scale-[1.1] transition-all duration-300">
                   <svg viewBox="0 0 24 24" width="28" height="28" stroke="currentColor" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
                 </a>
             </div>
@@ -709,12 +709,12 @@ export function Footer({ showLogo = true }: { showLogo?: boolean }) {
             <div className="md:col-span-1">
               {/* Logo placeholder + name */}
               <div className="flex items-center gap-3 mb-6">
-                <img src="/logo.jpg" alt="UOstudio logo" className="w-10 h-10 rounded-sm object-cover" />
+                <img src="/logo.jpg" alt="UOStudio logo" className="w-10 h-10 rounded-sm object-cover" />
                 <span
                   className="font-display font-bold text-white tracking-widest text-sm uppercase"
                   style={{ fontFamily: 'Orbitron, monospace' }}
                 >
-                  UOstudio
+                  UOStudio
                 </span>
               </div>
 
@@ -770,7 +770,7 @@ export function Footer({ showLogo = true }: { showLogo?: boolean }) {
             className="text-white/25 text-xs tracking-wide"
             style={{ fontFamily: 'Orbitron, monospace', fontSize: '0.6rem', letterSpacing: '0.12em' }}
           >
-            © 2026 UOstudio. All Rights Reserved.
+            © 2026 UOStudio. All Rights Reserved.
           </p>
           <div className="flex items-center gap-6">
             <Link
@@ -796,10 +796,10 @@ export function Footer({ showLogo = true }: { showLogo?: boolean }) {
 
 // ─── Main Page Component ───────────────────────────────────────────────────────
 /**
- * UOstudioHome — assembles all sections into the full single-page website.
+ * UOStudioHome — assembles all sections into the full single-page website.
  * Initialises scroll-reveal observers on mount.
  */
-function UOstudioHome() {
+function UOStudioHome() {
   // Activate scroll-reveal animations for all reveal elements on the page
   useScrollReveal()
 

@@ -4,10 +4,10 @@ import { ArrowLeft } from 'lucide-react'
 export const Route = createFileRoute('/privacy-policy')({
   head: () => ({
     meta: [
-      { title: 'Privacy Policy | UOstudio' },
-      { name: 'description', content: 'Our commitment to protecting your privacy at UOstudio.' },
-      { name: 'application-name', content: 'UOstudio' },
-      { property: 'og:site_name', content: 'UOstudio' },
+      { title: 'Privacy Policy | UOStudio' },
+      { name: 'description', content: 'Our commitment to protecting your privacy at UOStudio.' },
+      { name: 'application-name', content: 'UOStudio' },
+      { property: 'og:site_name', content: 'UOStudio' },
     ],
   }),
   component: PrivacyPolicy,

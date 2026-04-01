@@ -5,12 +5,12 @@ import { FounderSection, Footer, useScrollReveal } from './index'
 export const Route = createFileRoute('/founder')({
   head: () => ({
     meta: [
-      { title: 'The Founder | UOstudio' },
-      { name: 'description', content: 'Meet Arpit Chourasia, the founder and lead developer at UOstudio.' },
-      { name: 'application-name', content: 'UOstudio' },
-      { property: 'og:site_name', content: 'UOstudio' },
-      { property: 'og:title', content: 'The Founder | UOstudio' },
-      { property: 'og:description', content: 'Meet Arpit Chourasia, the founder and lead developer at UOstudio.' },
+      { title: 'The Founder | UOStudio' },
+      { name: 'description', content: 'Meet Arpit Chourasia, the founder and lead developer at UOStudio.' },
+      { name: 'application-name', content: 'UOStudio' },
+      { property: 'og:site_name', content: 'UOStudio' },
+      { property: 'og:title', content: 'The Founder | UOStudio' },
+      { property: 'og:description', content: 'Meet Arpit Chourasia, the founder and lead developer at UOStudio.' },
     ],
   }),
   component: FounderPage,
