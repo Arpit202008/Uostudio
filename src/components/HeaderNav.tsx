@@ -43,12 +43,12 @@ export function HeaderNav() {
           className="flex items-center gap-3 group cursor-pointer"
           aria-label="UOstudio home"
         >
-          <img src="/logo.jpg" alt="UOstudio logo" className="w-8 h-8 rounded-sm object-cover" />
+          <img src="/logo.jpg" alt="UOStudio logo" className="w-8 h-8 rounded-sm object-cover" />
           <span
             className="font-display font-bold text-white tracking-widest text-sm uppercase"
             style={{ fontFamily: 'Orbitron, monospace' }}
           >
-            UOstudio
+            UOStudio
           </span>
         </Link>
 

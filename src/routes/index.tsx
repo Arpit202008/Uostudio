@@ -15,14 +15,14 @@ import { HeaderNav } from '@/components/HeaderNav'
 export const Route = createFileRoute('/')({
   head: () => ({
     meta: [
-      { title: 'UOstudio | Game Development & Design Studio' },
+      { title: 'UOStudio' },
       {
         name: 'description',
         content: 'UOstudio is an independent game development studio creating next-generation interactive entertainment & immersive 2D worlds.',
       },
-      { name: 'application-name', content: 'UOstudio' },
-      { property: 'og:site_name', content: 'UOstudio' },
-      { property: 'og:title', content: 'UOstudio | Game Development & Design Studio' },
+      { name: 'application-name', content: 'UOStudio' },
+      { property: 'og:site_name', content: 'UOStudio' },
+      { property: 'og:title', content: 'UOStudio' },
       { property: 'og:description', content: 'UOstudio is an independent game development studio creating next-generation interactive entertainment & immersive 2D worlds.' },
     ],
   }),

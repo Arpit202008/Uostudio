@@ -6,31 +6,31 @@ export const Route = createRootRoute({
     meta: [
       { charSet: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { title: 'UOstudio — Game Development & Design Studio' },
+      { title: 'UOStudio' },
       {
         name: 'description',
         content:
           'UOstudio is a premium game development studio crafting immersive worlds, unforgettable experiences, and next-generation interactive entertainment.',
       },
       // Essential Brand Identity for Search Engines
-      { name: 'application-name', content: 'UOstudio' },
-      { name: 'apple-mobile-web-app-title', content: 'UOstudio' },
+      { name: 'application-name', content: 'UOStudio' },
+      { name: 'apple-mobile-web-app-title', content: 'UOStudio' },
       // Open Graph tags
-      { property: 'og:site_name', content: 'UOstudio' },
-      { property: 'og:title', content: 'UOstudio — Game Development Studio' },
+      { property: 'og:site_name', content: 'UOStudio' },
+      { property: 'og:title', content: 'UOStudio — Game Development Studio' },
       { property: 'og:description', content: 'UOstudio is an independent game development studio creating next-generation interactive entertainment & immersive 2D worlds.' },
       { property: 'og:type', content: 'website' },
       { property: 'og:url', content: 'https://uostudio.in' },
       { property: 'og:image', content: 'https://uostudio.in/logo.jpg' },
       // Twitter Card tags
       { name: 'twitter:card', content: 'summary_large_image' },
-      { name: 'twitter:title', content: 'UOstudio — Game Development Studio' },
+      { name: 'twitter:title', content: 'UOStudio — Game Development Studio' },
       { name: 'twitter:description', content: 'UOstudio is a premium game development studio.' },
       { name: 'twitter:image', content: 'https://uostudio.in/logo.jpg' }
     ],
     links: [
-      { rel: 'icon', type: 'image/svg+xml', href: '/favicon.svg' },
       { rel: 'icon', type: 'image/jpeg', href: '/logo.jpg', sizes: '192x192' },
+      { rel: 'icon', type: 'image/svg+xml', href: '/favicon.svg' },
       { rel: 'apple-touch-icon', href: '/logo.jpg' },
       // Google Fonts: Orbitron (futuristic display font) + Inter (clean body font)
       {
@@ -55,13 +55,13 @@ export const Route = createRootRoute({
           {
             "@context": "https://schema.org",
             "@type": "WebSite",
-            "name": "UOstudio",
+            "name": "UOStudio",
             "url": "https://uostudio.in/"
           },
           {
             "@context": "https://schema.org",
             "@type": "Organization",
-            "name": "UOstudio",
+            "name": "UOStudio",
             "url": "https://uostudio.in",
             "logo": "https://uostudio.in/logo.jpg",
             "email": "thecompanyuo@gmail.com",
