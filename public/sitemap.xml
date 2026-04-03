@@ -57,16 +57,17 @@
     <priority>0.7</priority>
   </url>
 
+  
   <url>
-    <loc>https://uostudio.in/blog/react-19-features</loc>
-    <lastmod>2026-04-01</lastmod>
-    <priority>0.6</priority>
+    <loc>https://uostudio.in/blog/1update</loc>
+    <lastmod>2026-04-02</lastmod>
+    <priority>0.7</priority>
   </url>
 
   <url>
-    <loc>https://uostudio.in/blog/getting-started-with-tanstack</loc>
-    <lastmod>2026-04-01</lastmod>
-    <priority>0.6</priority>
+    <loc>https://uostudio.in/blog/chess</loc>
+    <lastmod>2026-04-03</lastmod>
+    <priority>0.7</priority>
   </url>
 
   <!-- Legal -->
