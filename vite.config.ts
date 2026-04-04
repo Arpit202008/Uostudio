@@ -6,6 +6,8 @@ import tailwindcss from '@tailwindcss/vite'
 import netlify from '@netlify/vite-plugin-tanstack-start'
 import contentCollections from '@content-collections/vite'
 
+import { cloudflare } from "@cloudflare/vite-plugin";
+
 const config = defineConfig({
   plugins: [
     contentCollections(),
@@ -13,9 +15,13 @@ const config = defineConfig({
       projects: ['./tsconfig.json'],
     }),
     tailwindcss(),
-    netlify(),
     tanstackStart(),
     viteReact(),
+    cloudflare({
+      viteEnvironment: {
+        name: "ssr"
+      }
+    }),
   ],
 })
 
