@@ -70,6 +70,12 @@
     <priority>0.7</priority>
   </url>
 
+  <url>
+    <loc>https://uostudio.in/blog/behindcheckmate</loc>
+    <lastmod>2026-04-04</lastmod>
+    <priority>0.7</priority>
+  </url>
+
   <!-- Legal -->
   <url>
     <loc>https://uostudio.in/privacy-policy</loc>
